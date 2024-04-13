@@ -3,7 +3,7 @@
 <head>
   <title>تطبيق التحكم عن بُعد - تسجيل الدخول</title>
   <style>
-    body {
+     body {
       font-family: Arial, sans-serif;
       text-align: center;
       background-color: #f2f2f2;
@@ -29,14 +29,14 @@
 
     .login-input {
       margin-bottom: 10px;
-      width: 200px;
+      width: 40%;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
 
     .login-button {
-      width: 200px;
+      width: 40%;
       padding: 10px;
       background-color: #007bff;
       color: white;
@@ -51,9 +51,18 @@
     }
 
     .logo {
-      margin-bottom: 20px;
-      width: 200px;
+        margin-bottom: 20px;
+      width: 40%;
       height: auto;
+    }
+
+    @media (max-width: 600px) {
+      /* تعديل الأنماط لأجهزة العرض بعرض أقل من 600 بكسل */
+      .login-input,
+      .login-button,
+      .logo {
+        width: 80%;
+      }
     }
   </style>
 </head>
