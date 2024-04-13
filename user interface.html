@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>تطبيق التحكم عن بُعد - التحكم في الأجهزة</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .devices-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .device-button {
+      width: 200px;
+      padding: 10px;
+      margin: 10px;
+      background-color: #008CBA;
+      color: white;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .device-button:hover {
+      background-color: #004e6b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="devices-container">
+     <h1>الأجهزة</h1>
+      <button class="device-button">تشغيل الكمبيوتر</button>
+      <button class="device-button">إيقاف تشغيل الكمبيوتر</button>
+      <button class="device-button">تشغيل الإضاءة</button>
+      <button class="device-button">إيقاف تشغيل الإضاءة</button>
+      <button class="device-button" onclick="goBack()">عودة</button>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      // قم بتحويل المستخدم إلى صفحة تسجيل الدخول
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

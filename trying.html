@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>تطبيق التحكم عن بُعد - تسجيل الدخول</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-input {
+      margin-bottom: 10px;
+      width: 200px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .login-button {
+      width: 200px;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .login-button:hover {
+      background-color: #0056b3;
+    }
+
+    .logo {
+      margin-bottom: 20px;
+      width: 200px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="login-container">
+      <img src="photo_2024-04-13_10-04-18.jpg" alt="تطبيق التحكم عن بُعد" class="logo">
+      <h1>welcom</h1>
+      <input type="text" class="login-input" id="username" placeholder="username">
+      <input type="password" class="login-input" id="password" placeholder="password">
+      <button class="login-button" onclick="login()">LOG IN</button>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      // احصل على قيم اسم المستخدم وكلمة المرور من حقول الإدخال
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // يمكنك هنا إجراء التحقق من اسم المستخدم وكلمة المرور
+      if (username === 'me' && password === '12341234') {
+        // إذا كانت البيانات صحيحة، قم بتحويل المستخدم إلى صفحة التحكم في الأجهزة
+        window.location.href = 'user interface.html';
+      } else {
+        // إذا كانت البيانات غير صحيحة، قم بإظهار رسالة خطأ
+        alert('اسم المستخدم أو كلمة المرور غير صحيحة');
+      }
+    }
+  </script>
+</body>
+</html>
