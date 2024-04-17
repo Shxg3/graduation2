@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>تطبيق التحكم عن بُعد - التحكم في الأجهزة</title>
+  <title>واجهة التحكم في الأجهزة</title>
   <style>
+    /* أسلوب الأجهزة والأزرار والرسائل */
     body {
       font-family: Arial, sans-serif;
       text-align: center;
+      background-color: #f2f2f2;
     }
 
     .container {
@@ -16,44 +18,105 @@
     }
 
     .devices-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: white;
+  padding: 20px;
+}
+  .device {
+  width: 300px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+    .device div {
       display: flex;
-      flex-direction: column;
       align-items: center;
+      margin-bottom: 10px;
     }
 
-    .device-button {
-      width: 200px;
-      padding: 10px;
-      margin: 10px;
-      background-color: #008CBA;
+    .device-icon {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.device-name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.device-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #ccc;
+  color: #fff;
+}
+    .device-button.on {
+      background-color: #4CAF50;
       color: white;
-      font-size: 18px;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
     }
 
-    .device-button:hover {
-      background-color: #004e6b;
+    .device-button.off {
+      background-color: #FF0000;
+      color: white;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="devices-container">
-     <h1>الأجهزة</h1>
-      <button class="device-button">تشغيل الكمبيوتر</button>
-      <button class="device-button">إيقاف تشغيل الكمبيوتر</button>
-      <button class="device-button">تشغيل الإضاءة</button>
-      <button class="device-button">إيقاف تشغيل الإضاءة</button>
-      <button class="device-button" onclick="goBack()">عودة</button>
+      <div class="device">
+        <div>
+          <img class="device-icon" src="computer-icon.png" alt="Computer Icon">
+          <span class="device-name">Computer</span>
+        </div>
+        <button class="device-button off" onclick="toggleDevice(this)">Off</button>
+      </div>
+      <div class="device">
+        <div>
+          <img class="device-icon" src="light-icon.png" alt="Light Icon">
+          <span class="device-name">Light</span>
+        </div>
+        <button class="device-button off" onclick="toggleDevice(this)">Off</button>
+      </div>
+      <div class="device">
+        <div>
+          <img class="device-icon" src="tv-icon.png" alt="TV Icon">
+          <span class="device-name">TV</span>
+        </div>
+        <button class="device-button off" onclick="toggleDevice(this)">Off</button>
+      </div>
+      <div class="device">
+        <div>
+          <img class="device-icon" src="speaker-icon.png" alt="Speaker Icon">
+          <span class="device-name">Speaker</span>
+        </div>
+        <button class="device-button off" onclick="toggleDevice(this)">Off</button>
+      </div>
     </div>
   </div>
 
   <script>
-    function goBack() {
-      // قم بتحويل المستخدم إلى صفحة تسجيل الدخول
-      window.location.href = 'index.html';
+    function toggleDevice(button) {
+      if (button.classList.contains('on')) {
+        button.classList.remove('on');
+        button.classList.add('off');
+        button.textContent = 'off';
+      } else {
+        button.classList.remove('off');
+        button.classList.add('on');
+        button.textContent = 'on';
+      }
     }
   </script>
 </body>
