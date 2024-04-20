@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>واجهة التحكم في الأجهزة</title>
   <style>
-    /* أسلوب الأجهزة والأزرار والرسائل */
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
     }
 
     .container {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      flex-direction: column; /* تغيير الاتجاه إلى عمودي */
+      min-height: 100vh;
     }
 
     .devices-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  background-color: white;
-  padding: 20px;
-}
-  .device {
-  width: 300px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      background-color: white;
+      padding: 20px;
+      max-width: 600px; /* تحديد العرض الأقصى للأجهزة */
+      margin: 0 auto; /* توسيط العرض */
+    }
+
+    .device {
+      width: 100%;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
     .device div {
       display: flex;
@@ -42,25 +46,26 @@
     }
 
     .device-icon {
-  width: 80px;
-  height: 80px;
-  margin-right: 10px;
-}
+      width: 80px;
+      height: 80px;
+      margin-right: 10px;
+    }
 
-.device-name {
-  font-weight: bold;
-  font-size: 18px;
-}
+    .device-name {
+      font-weight: bold;
+      font-size: 18px;
+    }
 
-.device-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  background-color: #ccc;
-  color: #fff;
-}
+    .device-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background-color: #ccc;
+      color: #fff;
+    }
+
     .device-button.on {
       background-color: #4CAF50;
       color: white;
@@ -70,7 +75,38 @@
       background-color: #FF0000;
       color: white;
     }
+
+    .icons-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .icon {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out;
+      display: flex; /* إضافة الخاصية */
+      justify-content: center; /* إضافة الخاصية */
+      align-items: center; /* إضافة الخاصية */
+    }
+
+    .icon:hover {
+      transform: scale(1.1);
+    }
+
+    .icon img {
+      width: 70px;
+      height: 70px;
+      margin: 15px;
+    }
   </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <div class="container">
@@ -104,8 +140,18 @@
         <button class="device-button off" onclick="toggleDevice(this)">Off</button>
       </div>
     </div>
+    <div class="icons-container">
+      <a href="user interface.html" class="icon">
+        <img src="home.png" alt="Home">
+      </a>
+      <a href="add_device.html" class="icon">
+        <img src="add_device.png" alt="add device">
+      </a>
+      <a href="profile.html" class="icon">
+        <img src="profile.png" alt="profile">
+      </a>
+    </div>
   </div>
-
   <script>
     function toggleDevice(button) {
       if (button.classList.contains('on')) {
