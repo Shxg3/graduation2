@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>إضافة جهاز</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      text-align: center;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #fff;
+      width: 400px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #080bad;
+      margin: 0;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      text-align: right;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #071bad;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #a60707;
+    }
+
+    .icons-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .icon {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon:hover {
+      transform: scale(1.1);
+    }
+
+    .icon img {
+      width: 70px;
+      height: 70px;
+      margin: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form action="save_device.php" method="POST">
+      <h1>ADD NEW DEVICE</h1>
+      <label for="device_name">Name Device</label>
+      <input type="text" id="device_name" name="device_name" required>
+      <br>
+      <input type="submit" value="Save">
+    </form>
+    <div class="icons-container">
+      <a href="user interface.html" class="icon">
+        <img src="home.png" alt="Home">
+      </a>
+      <a href="add_device.html" class="icon">
+        <img src="add_device.png" alt="add device">
+      </a>
+      <a href="profile.html" class="icon">
+        <img src="profile.png" alt="profile">
+      </a>
+    </div>
+  </div>
+</body>
+</html>
