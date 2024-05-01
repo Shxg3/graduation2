@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>إضافة جهاز</title>
+  <title>ADD Device</title>
   <style>
     .container {
       display: flex;
@@ -98,9 +98,11 @@
 </head>
 <body>
   <div class="container">
-    <form action="save_device.php" method="POST">
+    <form action="user interface.html" method="POST">
       <h1>ADD NEW DEVICE</h1>
       <label for="device_name">Name Device</label>
+      <input type="text" id="device_name" name="device_name" required>
+      <label for="device_name">IP</label>
       <input type="text" id="device_name" name="device_name" required>
       <br>
       <input type="submit" value="Save">
